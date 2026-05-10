@@ -1,0 +1,117 @@
+[
+    {
+        "question": "Can a soldier fire upon an unarmed civilian who is insulting them?",
+        "expected_output": "No. Under the Standing Rules of Engagement (SROE), deadly force is only authorized in self-defense against a hostile act or demonstrated hostile intent. Verbal insults do not constitute a hostile act.",
+        "actual_output": "No, according to the DoD SROE, verbal provocation or insults do not justify the use of deadly force, so a soldier cannot fire upon an unarmed civilian simply because they are insulting them.",
+        "context": [
+            "The DoD SROE dictates that use of force must be proportional and limited to situations involving self-defense against imminent threat of death or serious bodily harm. Verbal provocation or insults do not justify the use of deadly force."
+        ],
+        "passed": false,
+        "metrics": [
+            {
+                "name": "Correctness [GEval]",
+                "score": 0.2,
+                "success": false,
+                "reason": "The actual output does not strictly align with the expected output as it suggests 'HOLD FIRE AND TAKE NO FURTHER ACTION', while the expected output specifies that the combatant must be detained and treated as a prisoner of war (POW) according to the Geneva Conventions."
+            },
+            {
+                "name": "Faithfulness",
+                "score": 0.5,
+                "success": false,
+                "reason": "The faithfulness score is 0.50 because the actual output suggests taking 'no further action' after an enemy combatant has surrendered, which contradicts the established Laws of Armed Conflict (LOAC) and the Standard Rules of Engagement (SROE), stating that surrendered combatants should be protected."
+            }
+        ]
+    },
+    {
+        "question": "If an enemy combatant drops their weapon and raises their hands, what is the appropriate action?",
+        "expected_output": "The combatant must not be fired upon. They have indicated surrender and must be detained and treated as a prisoner of war (POW) according to the Geneva Conventions.",
+        "actual_output": "Based on the context, since the enemy combatant has clearly surrendered by dropping their weapon and raising their hands, according to LOAC and SROE, it would be appropriate to:\n\n**HOLD FIRE AND TAKE NO FURTHER ACTION**\n\nThis is because, as per the rules of engagement, attacking hors de combat personnel, including those who have clearly surrendered, is prohibited.",
+        "context": [
+            "Law of Armed Conflict (LOAC) and SROE explicitly prohibit attacking enemy personnel who are out of combat (hors de combat), including those who have clearly surrendered, are wounded, or incapacitated."
+        ],
+        "passed": true,
+        "metrics": [
+            {
+                "name": "Correctness [GEval]",
+                "score": 0.8,
+                "success": true,
+                "reason": "The actual output is factually correct and aligns with the expected output, but it goes beyond the expected output by providing additional context about the Standing Rules of Engagement (SROE). While this information is relevant, it is not strictly necessary for the response to match the expected output. Therefore, the score is 8."
+            },
+            {
+                "name": "Faithfulness",
+                "score": 1.0,
+                "success": true,
+                "reason": "The score is 1.00 because there are no contradictions found between the actual output and the retrieval context."
+            }
+        ]
+    },
+    {
+        "question": "Is it permissible to conduct a drone strike on a confirmed terrorist leader if they are hiding in a crowded hospital?",
+        "expected_output": "No, generally it is not permissible. Striking a hospital violates the principle of proportionality and the protected status of medical facilities, unless the military advantage heavily outweighs the expected civilian casualties and all feasible precautions are taken, which is extremely rare.",
+        "actual_output": "No.",
+        "context": [
+            "Hospitals and medical facilities have special protected status under international law. A strike may only occur if the facility loses its protected status by being used for military action, and even then, the principle of proportionality and collateral damage constraints must be strictly adhered to."
+        ],
+        "passed": false,
+        "metrics": [
+            {
+                "name": "Correctness [GEval]",
+                "score": 0.0,
+                "success": false,
+                "reason": "The actual output does not strictly align with the expected output as it is significantly shorter and lacks detail, while the expected output provides a comprehensive explanation of why striking a hospital is generally not permissible."
+            },
+            {
+                "name": "Faithfulness",
+                "score": 0.0,
+                "success": false,
+                "reason": "The score is 0.00 because the actual output contradicts the provided facts in the retrieval context by not adhering to or acknowledging the protected status of hospitals and medical facilities under international law, the conditions for a strike on them, and the principles to be followed during such strikes."
+            }
+        ]
+    },
+    {
+        "question": "What is the requirement before using deadly force against an incoming vehicle ignoring checkpoint commands?",
+        "expected_output": "Soldiers must employ the escalation of force (EOF) continuum. This includes visual signals, auditory warnings, and warning shots (if authorized) to determine hostile intent before escalating to deadly force.",
+        "actual_output": "Based on the context, the answer is:\n\nBefore using deadly force against an incoming vehicle ignoring checkpoint commands, personnel must attempt non-lethal warnings (shouting, shoving, showing weapons, warning shots) to determine if a vehicle possesses hostile intent.",
+        "context": [
+            "Checkpoints require an Escalation of Force (EOF) procedure. Personnel must attempt non-lethal warnings (shouting, shoving, showing weapons, warning shots) to determine if a vehicle possesses a hostile intent before using deadly or disabling fire."
+        ],
+        "passed": false,
+        "metrics": [
+            {
+                "name": "Correctness [GEval]",
+                "score": 0.0,
+                "success": false,
+                "reason": "The actual output does not match the expected output, as the actual output is a single word 'No', while the expected output provides an explanation about the use of riot control agents in war zones. Additionally, the expected output includes factual information that is missing from the actual output."
+            },
+            {
+                "name": "Faithfulness",
+                "score": 0.0,
+                "success": false,
+                "reason": "The score is 0.00 because the actual output claims there are no factual, undisputed truths, which contradicts the retrieval context that provides facts about the use of Riot Control Agents (RCAs) in armed conflict."
+            }
+        ]
+    },
+    {
+        "question": "Can a unit commander authorize the use of riot control agents (tear gas) in a combat zone?",
+        "expected_output": "No, the use of riot control agents in a war zone requires authorization from the highest levels, typically the Secretary of Defense or the President, as it is heavily restricted by international treaties.",
+        "actual_output": "No.",
+        "context": [
+            "The Chemical Weapons Convention and specific DoD directives severely restrict the use of Riot Control Agents (RCAs) in armed conflict. Approval authority for the use of RCAs in combat typically resides with the President or Secretary of Defense, not local commanders."
+        ],
+        "passed": false,
+        "metrics": [
+            {
+                "name": "Correctness [GEval]",
+                "score": 0.2,
+                "success": false,
+                "reason": "The actual output does not strictly align with the expected output. While both discuss the use of non-lethal warnings, the actual output includes additional details such as 'shoving' and 'showing weapons', which are not mentioned in the expected output."
+            },
+            {
+                "name": "Faithfulness",
+                "score": 1.0,
+                "success": true,
+                "reason": "The score is 1.00 because there are no contradictions found between the actual output and the retrieval context."
+            }
+        ]
+    }
+]
